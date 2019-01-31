@@ -1,7 +1,7 @@
 package com.sergio.eltiempo;
 
 public class Forecast {
-    private int id;
+    private long id;
     private String weather_state_name;
     private String weather_state_abbr;
     private String wind_direction_compass;
@@ -17,11 +17,11 @@ public class Forecast {
     private Float visibility;
     private int predictability;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

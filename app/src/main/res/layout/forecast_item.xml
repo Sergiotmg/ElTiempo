@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgState"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgState"
+        app:layout_constraintStart_toEndOf="@+id/imgState"
+        app:layout_constraintTop_toTopOf="@+id/imgState"
+        app:layout_constraintVertical_bias="0.25"
+        tools:text="2019-01-01" />
+
+    <TextView
+        android:id="@+id/txtWindDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/txtDate"
+        app:layout_constraintTop_toTopOf="@+id/txtDate"
+        tools:text="NWSW" />
+
+    <TextView
+        android:id="@+id/txtWindSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/txtWindDirection"
+        app:layout_constraintTop_toTopOf="@+id/txtWindDirection"
+        tools:text="234.22" />
+
+    <TextView
+        android:id="@+id/txtMaxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgState"
+        app:layout_constraintStart_toEndOf="@+id/imgState"
+        app:layout_constraintTop_toTopOf="@+id/imgState"
+        app:layout_constraintVertical_bias="0.75"
+        tools:text="25ºC" />
+
+    <TextView
+        android:id="@+id/txtMinTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="TextView"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMaxTemp"
+        app:layout_constraintStart_toEndOf="@+id/txtMaxTemp"
+        tools:text="32ºC" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMinTemp"
+        app:layout_constraintStart_toEndOf="@+id/txtMinTemp"
+        tools:text="26ºC" />
+
+</android.support.constraint.ConstraintLayout>
