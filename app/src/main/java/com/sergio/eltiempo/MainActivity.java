@@ -6,18 +6,30 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements Controller.ServerResponse {
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity implements Controller.ServerResponse {
+    private Weather mWeather;
+    private List<Forecast> consolidatedWeather;
+    private RecyclerView mRecyclerView;
+    private  ForecastAdapter mForecastAdapter;
+    private  WeatherAdapter mWeatherAdapter;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Controller controller= new Controller(this);
         controller.start();
-
-        RecyclerView recyclerView=findViewById(R.id.recyclerView);
+        consolidatedWeather=mWeather.getConsolidated_weather();
+        
+        mRecyclerView=findViewById(R.id.recyclerView);
+        mForecastAdapter=new ForecastAdapter(this,consolidatedWeather);
+        
+        
+        
         LinearLayoutManager manager=new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(manager);
+        mRecyclerView.setLayoutManager(manager);
 
 
     }
