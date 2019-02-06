@@ -99,8 +99,11 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
         // coger la imagen de la clase Forecast NO SE COMO SE HACE
         //holder.mImgState.setImageResource(mCurrent.getConsolidated_weather());
-        String url="https://www.metaweather.com/static/img/weather/png/64/"+mCurrent.getWeather_state_abbr()+".png";
-        Glide.with(context).load(url).into(holder.ImgState);
+        String url="https://www.metaweather.com/static/img/weather/png/64/"
+                +mCurrent.getWeather_state_abbr()+".png";
+
+        GlideApp.with(context).load(url).fitCenter().into(holder.ImgState);
+        //alpasarle el context es que lo cargas en esta actividad , como salgas de esa deja de load
 
         holder.TxtActTemp.setText(get1DecimalNumber(mCurrent.getThe_temp())+" ºC");
 
@@ -115,7 +118,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
         holder.TxtDate.setText(mCurrent.getApplicable_date());
         //holder.mTxtTitle.setText(mCurrent.get);
         Log.d("weather ADAPTER:",url);
-        holder.mConstraintLayout.setBackgroundColor(9);
+        holder.mConstraintLayout.setBackgroundColor(Color.parseColor("#9BC0F0"));
     }
 
     @Override
