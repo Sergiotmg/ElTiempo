@@ -11,22 +11,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder> {
-    private List<Forecast> mForecastList;
+    private List<Forecast> mForecastList=new ArrayList<>();
     //private List<Forecast> mForecastList;
     private LayoutInflater mInflater;
-    //private Context context;
+    private Context context;
 
 
         //CONSTRUCTOR
-        public ForecastAdapter(Context context, List<Forecast> weatherList) {//context no se deberia
+        public ForecastAdapter(Context context) {//context no se deberia
+            this.context=context;
             mInflater = LayoutInflater.from(context);// si hay 20 creara 20
-            this.mForecastList = weatherList;
-            //this.mForecastList = forecastList;
-            //this.context=context;// no necesaria , podemos eliminar arriba private Context context
+
 
         }
+
+
     class ForecastViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener { // NUNCA CAMBIA ESTA FRASE
         public final ConstraintLayout mConstraintLayout;
 
@@ -105,6 +107,13 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     public int getItemCount() {
         return mForecastList.size();
     }
+
+    public void setData(List<Forecast> newList) {
+        mForecastList=newList;
+        notifyDataSetChanged();
+
+    }
+
 
 
 
